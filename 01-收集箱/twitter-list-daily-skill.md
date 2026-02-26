@@ -8,6 +8,12 @@
 ### 需要监控的 List
 请提供你想监控的 List，我们来配置
 
+### 1. 核心关注
+- List ID: 1976167332289577300
+- 创建者: @Btc_Dou
+- 成员: 13人
+- 简介: 中文币圈/美股交易者
+
 ### List ID 获取方法
 1. 打开 List 页面：https://x.com/i/lists/xxxxx
 2. URL 最后的数字就是 List ID
