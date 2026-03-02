@@ -1,0 +1,27 @@
+{
+  "name": "aenews2",
+  "address": "0x44c1dfe43260c94ed4f1d00de2e1f80fb113ebc1",
+  "rank": 43,
+  "total_trades": 3584,
+  "active_positions": 23,
+  "win_rate": 74.4,
+  "total_gains": 3452606,
+  "total_losses": -1560808,
+  "total_pnl": 1891798,
+  "current_value": 547786,
+  "is_bot": false,
+  "niche": "Politics / Geopolitics",
+  "categories": [
+    {"name": "Politics", "pnl": 1516291},
+    {"name": "Trump", "pnl": 525696},
+    {"name": "Culture", "pnl": 432666},
+    {"name": "World", "pnl": 399995},
+    {"name": "Yoon", "pnl": 354586}
+  ],
+  "current_positions": [
+    {"market": "Who will Trump nominate as Fed Chair?", "position": "Judy Shelton - No", "value": 294784},
+    {"market": "Who will Trump nominate as Fed Chair?", "position": "Kevin Warsh - Yes", "value": 147533},
+    {"market": "Will US or Israel strike Iran first?", "position": "US", "value": 41583}
+  ],
+  "analysis_date": "2026-02-28"
+}
