@@ -1,0 +1,27 @@
+{
+  "name": "zxgngl",
+  "address": "0xd235973291b2b75ff4070e9c0b01728c520b0f29",
+  "rank": 5,
+  "total_trades": 8,
+  "active_positions": 0,
+  "win_rate": 80.0,
+  "total_gains": 11448023,
+  "total_losses": -3640758,
+  "total_pnl": 7807266,
+  "current_value": 0,
+  "is_bot": false,
+  "niche": "US Election / Politics",
+  "categories": [
+    {"name": "Politics", "pnl": 11447932},
+    {"name": "Trump", "pnl": 11447932},
+    {"name": "US Election", "pnl": 11447931},
+    {"name": "2024 US Presidential Election", "pnl": 11447931},
+    {"name": "Elections", "pnl": 11447931}
+  ],
+  "top_trades": [
+    {"market": "Presidential Election Winner 2024", "pnl": 11447931},
+    {"market": "Bitcoin November 2024", "pnl": 91},
+    {"market": "Nevada Margin of Victory", "pnl": 1}
+  ],
+  "analysis_date": "2026-02-28"
+}
