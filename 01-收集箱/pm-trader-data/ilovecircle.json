@@ -1,0 +1,22 @@
+{
+  "name": "ilovecircle",
+  "address": "0xa9878e59934ab507f9039bcb917c1bae0451141d",
+  "rank": 34,
+  "total_trades": 1548,
+  "active_positions": 0,
+  "win_rate": 74.2,
+  "total_gains": 6296407,
+  "total_losses": -4055617,
+  "total_pnl": 2240790,
+  "current_value": 0,
+  "is_bot": false,
+  "niche": "Sports / NFL / MLB / UFC",
+  "categories": [
+    {"name": "Sports", "pnl": 2167261},
+    {"name": "Games", "pnl": 1882995},
+    {"name": "NFL", "pnl": 718310},
+    {"name": "MLB", "pnl": 582131},
+    {"name": "UFC", "pnl": 308785}
+  ],
+  "analysis_date": "2026-02-28"
+}
