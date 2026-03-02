@@ -1,0 +1,29 @@
+{
+  "name": "Michie",
+  "address": "0xed2239a9150c3920000d0094d28fa51c7db03dd0",
+  "rank": 27,
+  "total_trades": 16,
+  "active_positions": 0,
+  "win_rate": 75.0,
+  "total_gains": 3095388,
+  "total_losses": -381,
+  "total_pnl": 3095008,
+  "current_value": 0,
+  "is_bot": false,
+  "niche": "US Election / Politics",
+  "categories": [
+    {"name": "Politics", "pnl": 3095008},
+    {"name": "US Election", "pnl": 3062056},
+    {"name": "Elections", "pnl": 3048238},
+    {"name": "Republican Party", "pnl": 3015170},
+    {"name": "2024 Presidential Election", "pnl": 2822917}
+  ],
+  "top_trades": [
+    {"market": "Presidential Election Winner 2024", "pnl": 2627904},
+    {"market": "Popular Vote Winner 2024", "pnl": 161944},
+    {"market": "Who will win Pennsylvania?", "pnl": 146050},
+    {"market": "Who will win Michigan?", "pnl": 79272},
+    {"market": "Who wins Presidency + Popular Vote?", "pnl": 47150}
+  ],
+  "analysis_date": "2026-02-28"
+}
