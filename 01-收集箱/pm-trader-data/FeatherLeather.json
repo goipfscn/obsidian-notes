@@ -1,0 +1,28 @@
+{
+  "name": "FeatherLeather",
+  "address": "0xd25c72ac0928385610611c8148803dc717334d20",
+  "rank": 36,
+  "total_trades": 9,
+  "active_positions": 0,
+  "win_rate": 77.8,
+  "total_gains": 2420902,
+  "total_losses": -323422,
+  "total_pnl": 2097480,
+  "current_value": 0,
+  "is_bot": false,
+  "niche": "Soccer / Football",
+  "categories": [
+    {"name": "Sports", "pnl": 2097480},
+    {"name": "Soccer", "pnl": 2097239},
+    {"name": "sea", "pnl": 1756131},
+    {"name": "UEL", "pnl": 244210},
+    {"name": "Ligue 1", "pnl": 164146}
+  ],
+  "top_trades": [
+    {"market": "Bologna vs AC Milan", "pnl": 1402953},
+    {"market": "Strasbourg vs PSG", "pnl": 420319},
+    {"market": "Cagliari vs Hellas Verona", "pnl": 353178},
+    {"market": "FC Midtjylland vs GNK Dinamo Zagreb", "pnl": 244210}
+  ],
+  "analysis_date": "2026-02-28"
+}
