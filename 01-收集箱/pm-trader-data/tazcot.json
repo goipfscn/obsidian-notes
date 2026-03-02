@@ -1,0 +1,27 @@
+{
+  "name": "tazcot",
+  "address": "0x343d4466dc323b850e5249394894c7381d91456e",
+  "rank": 30,
+  "total_trades": 34,
+  "active_positions": 0,
+  "win_rate": 60.6,
+  "total_gains": 3250572,
+  "total_losses": -646024,
+  "total_pnl": 2604548,
+  "current_value": 0,
+  "is_bot": false,
+  "niche": "Sports / MLB",
+  "categories": [
+    {"name": "Sports", "pnl": 2604548},
+    {"name": "Games", "pnl": 2604548},
+    {"name": "MLB", "pnl": 2604548}
+  ],
+  "top_trades": [
+    {"market": "Yankees vs Blue Jays", "pnl": 485186},
+    {"market": "Reds vs Phillies", "pnl": 397809},
+    {"market": "Angels vs Braves", "pnl": 280140},
+    {"market": "Orioles vs Braves", "pnl": 250237},
+    {"market": "Yankees vs Blue Jays", "pnl": 227925}
+  ],
+  "analysis_date": "2026-02-28"
+}
