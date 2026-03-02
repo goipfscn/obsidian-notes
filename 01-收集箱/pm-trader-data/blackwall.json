@@ -1,0 +1,29 @@
+{
+  "name": "blackwall",
+  "address": "0xac44cb78be973ec7d91b69678c4bdfa7009afbd7",
+  "rank": 32,
+  "total_trades": 8,
+  "active_positions": 0,
+  "win_rate": 62.5,
+  "total_gains": 5231235,
+  "total_losses": -2920377,
+  "total_pnl": 2310858,
+  "current_value": 0,
+  "is_bot": false,
+  "niche": "Soccer / UCL",
+  "categories": [
+    {"name": "UCL", "pnl": 4763181},
+    {"name": "Soccer", "pnl": 2310858},
+    {"name": "Sports", "pnl": 2310858},
+    {"name": "Games", "pnl": 2310858},
+    {"name": "Ligue 1", "pnl": 310162}
+  ],
+  "top_trades": [
+    {"market": "Dortmund vs Atalanta", "pnl": 4541610},
+    {"market": "Marseille vs Strasbourg", "pnl": 310162},
+    {"market": "Qarabağ vs Newcastle", "pnl": 221571},
+    {"market": "AZ vs Ajax", "pnl": 95563},
+    {"market": "Hamburger SV vs Union Berlin", "pnl": 62330}
+  ],
+  "analysis_date": "2026-02-28"
+}
