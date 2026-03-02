@@ -1,0 +1,29 @@
+{
+  "name": "Fredi9999",
+  "address": "0x1f2dd6d473f3e824cd2f8a89d9c69fb96f6ad0cf",
+  "rank": 2,
+  "total_trades": 66,
+  "active_positions": 0,
+  "win_rate": 73.3,
+  "total_gains": 16983898,
+  "total_losses": -364392,
+  "total_pnl": 16619507,
+  "current_value": 0,
+  "is_bot": false,
+  "niche": "US Election",
+  "categories": [
+    {"name": "US Election", "pnl": 16888139},
+    {"name": "Politics", "pnl": 16619170},
+    {"name": "Elections", "pnl": 16130999},
+    {"name": "Republican Party", "pnl": 16095018},
+    {"name": "Trump", "pnl": 14071100}
+  ],
+  "top_trades": [
+    {"market": "Presidential Election Winner 2024", "pnl": 9696004},
+    {"market": "Popular Vote Winner 2024", "pnl": 4333380},
+    {"market": "Who wins Pennsylvania?", "pnl": 1204302},
+    {"market": "Who wins Presidency + Popular Vote?", "pnl": 791450},
+    {"market": "Who will win Michigan?", "pnl": 672084}
+  ],
+  "analysis_date": "2026-02-28"
+}
