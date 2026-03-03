@@ -1,0 +1,70 @@
+{
+  "name": "Ronaldo2100",
+  "address": "0x71ca04d689bc38c5e4dcda8a4d743f279c5A3501",
+  "1haobo_criteria": {
+    "pnl": {
+      "value": "$234K",
+      "status": "✅ 符合",
+      "range": "$15K-$400K"
+    },
+    "win_rate": {
+      "value": "100%",
+      "status": "✅ 符合",
+      "range": "70%-90%"
+    },
+    "trades": {
+      "value": 469,
+      "status": "✅ 符合",
+      "range": "20-1000"
+    },
+    "executed": {
+      "value": 161,
+      "status": "✅ 符合",
+      "range": "≥10"
+    },
+    "specialty": {
+      "value": "央行利率、伊朗",
+      "status": "✅ 专精单一领域"
+    }
+  },
+  "backtest": {
+    "lookback": "30天",
+    "fixed_usd": 10,
+    "total_signals": 469,
+    "executed_signals": 161,
+    "skipped_signals": 308,
+    "win_rate": "100%",
+    "pnl_usd": 58.29,
+    "avg_return_pct": 3.62,
+    "max_drawdown_usd": 0
+  },
+  "stats": {
+    "total_trades": 469,
+    "avg_usdc_size": "$666",
+    "first_trade": "2025-12-06",
+    "last_trade": "2026-03-01"
+  },
+  "top_markets": [
+    {
+      "market": "泰国2026立法选举",
+      "count": 177
+    },
+    {
+      "market": "Fed 3月利率不变",
+      "count": 161
+    },
+    {
+      "market": "美国2月打击伊朗",
+      "count": 22
+    },
+    {
+      "market": "葡萄牙选举",
+      "count": 19
+    },
+    {
+      "market": "英国央行3月降息",
+      "count": 17
+    }
+  ],
+  "evaluation": "✅ 完美符合1号博主标准"
+}

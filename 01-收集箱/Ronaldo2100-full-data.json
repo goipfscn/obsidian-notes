@@ -1,0 +1,50 @@
+{
+  "trader": "Ronaldo2100",
+  "address": "0x71ca04d689bc38c5e4dcda8a4d743f279c5A3501",
+  "total_trades_500": 469,
+  "analysis": {
+    "specialty_1": {
+      "name": "Fed Interest Rate",
+      "count": 161,
+      "pct": 34
+    },
+    "specialty_2": {
+      "name": "Iran/Geopolitics",
+      "count": 140,
+      "pct": 30
+    },
+    "specialty_3": {
+      "name": "Thai Election",
+      "count": 100,
+      "pct": 21
+    },
+    "specialty_4": {
+      "name": "Gold/Bitcoin",
+      "count": 68,
+      "pct": 15
+    }
+  },
+  "recent_settlements": [
+    {
+      "market": "Gold $5,800 hit",
+      "profit": 19737
+    },
+    {
+      "market": "US strikes Iran Feb 26",
+      "profit": 11110
+    },
+    {
+      "market": "Bitcoin dip to $60K",
+      "profit": 11110
+    },
+    {
+      "market": "US strikes Iran Feb 24",
+      "profit": 5555
+    },
+    {
+      "market": "Gold $5,500 hit",
+      "profit": 4444
+    }
+  ],
+  "total_settled_profit": 51956
+}
