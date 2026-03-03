@@ -1,0 +1,42 @@
+{
+  "qualified": [
+    {
+      "name": "Ronaldo2100",
+      "address": "0x71ca04d689bc38c5e4dcda8a4d743f279c5a3501",
+      "executed": 161,
+      "win_rate": 100,
+      "pnl_90d": 58.29,
+      "specialty": "\u592e\u884c\u5229\u7387 (Fed/BOE)",
+      "status": "\u2705 \u63a8\u8350"
+    }
+  ],
+  "tested": [
+    {
+      "name": "Ronaldo2100",
+      "address": "0x71ca04d689bc38c5e4dcda8a4d743f279c5a3501",
+      "executed": 161,
+      "win_rate": 100,
+      "pnl_90d": 58.29,
+      "specialty": "\u592e\u884c\u5229\u7387 (Fed/BOE)",
+      "status": "\u2705 \u63a8\u8350"
+    },
+    {
+      "name": "TheEtherist",
+      "address": "0xeb25989daa631877d17d5555a3386e2cd73523e1",
+      "executed": 0,
+      "win_rate": 0,
+      "pnl_90d": 0,
+      "specialty": "\u7f8e\u56fd\u5927\u9009",
+      "status": "\u26a0\ufe0f \u6570\u636e\u592a\u65e7"
+    },
+    {
+      "name": "BigBlackGorilla",
+      "address": "0x97e12cc7391a50e49042b44a2d4a0cef54c8017b",
+      "executed": 0,
+      "win_rate": 0,
+      "pnl_90d": 0,
+      "specialty": "\u7535\u7ade (LOL/EPL)",
+      "status": "\u26a0\ufe0f \u5e02\u573a\u6d41\u52a8\u6027\u4e0d\u8db3"
+    }
+  ]
+}
