@@ -52,12 +52,26 @@ duola backtest 别名 --lookback 90d --fixed-usd 10
 
 ## 步骤3: 1号博主筛选标准
 
+### 初级筛选 (CLI数据)
 | 指标 | 范围 |
+|------|------|
+| PnL | $15K - $400K |
+| 胜率 | 70% - 90% |
+| 交易次数 | 20 - 1000 |
+| 活跃仓位 | ≥2 |
+
+### 二次验证 (duola回测)
+| 指标 | 要求 |
 |------|------|
 | 执行信号数 | ≥ 10 |
 | 胜率 | ≥ 70% |
 | PnL | > 0 |
 | 专精 | 单一领域 |
+
+### 排除Bot
+- ❌ 胜率 > 90% (可能是Bot)
+- ❌ 交易次数 > 1000 (高频交易)
+- ❌ 执行信号太少 (< 10)
 
 ---
 
@@ -67,10 +81,21 @@ duola backtest 别名 --lookback 90d --fixed-usd 10
 
 ```json
 {
-  "qualified": [...],
+  "qualified": [
+    {
+      "name": "Ronaldo2100",
+      "address": "0x...",
+      "win_rate": 100,
+      "pnl_90d": 58.29,
+      "executed": 161,
+      "specialty": "央行利率"
+    }
+  ],
   "tested": [...]
 }
 ```
+
+同时生成报告: `pm-1haobo-qualified.md`
 
 ---
 
