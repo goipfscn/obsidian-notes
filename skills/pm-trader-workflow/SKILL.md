@@ -75,16 +75,32 @@ duola backtest 别名 --lookback 30d --fixed-usd 10
 | 指标 | 要求 |
 |------|------|
 | 执行信号 | ≥ 10 |
-| 胜率 | ≥ 70% |
+| 胜率 | ≥ 70% (可放宽到90%) |
 | PnL | > 0 |
 
 ### 排除Bot
-- ❌ 胜率 > 90%
+- ❌ 胜率 > 95% (确定是Bot)
+- ⚠️ 胜率90-95% 需要人工判断
 - ❌ 交易 > 1000次
 
 ---
 
-## 步骤4: 图表分析
+## 步骤4: Scrapling抓取详细数据
+
+### 安装
+```bash
+pip install scrapling --break-system-packages
+```
+
+### 使用Cookie抓取
+```bash
+scrapling extract fetch "https://polymarketanalytics.com/traders/0x交易员地址" /tmp/output.html --extra-headers "Cookie: auth_session=你的auth_session;pm_sticky=polygun" --wait 3000
+```
+
+### 获取Cookie
+1. 打开 https://polymarketanalytics.com 并登录
+2. 使用Cookie-Editor插件导出cookie
+3. 或者用F12 → Console: `console.log(document.cookie)`
 
 ### 专精领域分布
 ```
@@ -124,10 +140,11 @@ $0   ┼────────────────────────
 
 ### Ronaldo2100 ✅
 - 地址: `0x71ca04d689bc38c5e4dcda8a4d743f279c5A3501`
-- 胜率: 100%
-- 30天PnL: $58.29
+- **PnL: $174,851** (Scrapling数据)
+- **Win Rate: 92.9%** (Scrapling数据)
+- Volume: $135,758
 - 专精: 央行利率、伊朗、黄金
-- 24天内交易: 469笔
+- 状态: ✅ 符合1号博主标准
 
 ---
 
