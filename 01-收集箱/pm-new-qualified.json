@@ -1,0 +1,37 @@
+[
+  {
+    "name": "joosangyoo",
+    "address": "0x07b8E44b90cC3e91B8D5fe60eA810D2534638e25",
+    "pnl": 189905,
+    "win_rate": 70.6,
+    "status": "\u2705 \u7b26\u54081\u53f7\u535a\u4e3b\u6807\u51c6"
+  },
+  {
+    "name": "TheOnlyHuman",
+    "address": "0x6aDE597C0e2B43C0Bf3542CadA8A5e330D73f5b0",
+    "pnl": 126087,
+    "win_rate": 76.5,
+    "status": "\u2705 \u7b26\u54081\u53f7\u535a\u4e3b\u6807\u51c6"
+  },
+  {
+    "name": "ChinesePro",
+    "address": "0x37E053BEabEe77ACC15e641DFe8e395b2B2d024E",
+    "pnl": 199899,
+    "win_rate": 96.8,
+    "status": "\u26a0\ufe0f \u80dc\u7387\u592a\u9ad8\uff0c\u53ef\u80fd\u662fBot"
+  },
+  {
+    "name": "gatorr",
+    "address": "0x93ABBC022ce98d6F45D4444b594791CC4B7a9723",
+    "pnl": 168780,
+    "win_rate": 65.6,
+    "status": "\u26a0\ufe0f \u80dc\u7387\u7565\u4f4e"
+  },
+  {
+    "name": "geniusMC",
+    "address": "0x0b9CAe2B0dfe7a71c413E0604EaAC1C352f87e44",
+    "pnl": 1868800,
+    "win_rate": 52.0,
+    "status": "\u274c PnL\u8d85\u9650\uff0c\u80dc\u7387\u4f4e"
+  }
+]
