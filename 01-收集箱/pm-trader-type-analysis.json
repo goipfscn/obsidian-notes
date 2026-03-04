@@ -1,0 +1,48 @@
+{
+  "prediction_market": [
+    {
+      "name": "Ronaldo2100",
+      "specialty": "央行利率、伊朗"
+    },
+    {
+      "name": "SwissMiss",
+      "specialty": "政治、UFC"
+    },
+    {
+      "name": "NorthBalticMan9",
+      "specialty": "足球预测"
+    },
+    {
+      "name": "ChinesePro",
+      "specialty": "比特币"
+    }
+  ],
+  "sports_arbitrage": [
+    {
+      "name": "gatorr",
+      "specialty": "NBA"
+    },
+    {
+      "name": "JuicySlots",
+      "specialty": "CS2电竞"
+    },
+    {
+      "name": "gopatriots",
+      "specialty": "NBA"
+    },
+    {
+      "name": "swisstony",
+      "specialty": "网球、足球"
+    }
+  ],
+  "unclear": [
+    {
+      "name": "auggl00p",
+      "specialty": "足球"
+    },
+    {
+      "name": "Wannac",
+      "specialty": "足球"
+    }
+  ]
+}

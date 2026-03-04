@@ -1,0 +1,12 @@
+{
+  "name": "trfr",
+  "address": "0x0b007814d459a8ac1f567b231b60ed389dc8369d",
+  "total_pnl": 367651,
+  "win_rate": 89.6,
+  "total_trades": 284,
+  "active_positions": 14,
+  "is_qualified": true,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T13:05:46.220928",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

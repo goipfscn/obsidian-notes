@@ -1,0 +1,25 @@
+{
+  "tested": [
+    {
+      "name": "DumbMoney1",
+      "error": "Expecting property name enclosed in double quotes: line 2 column 3 (char 4)"
+    },
+    {
+      "name": "prematch",
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "name": "Gambler1968",
+      "error": "Expecting property name enclosed in double quotes: line 2 column 3 (char 4)"
+    },
+    {
+      "name": "ChinesePro",
+      "error": "Expecting property name enclosed in double quotes: line 2 column 3 (char 4)"
+    },
+    {
+      "name": "sherlockhomie",
+      "error": "Expecting property name enclosed in double quotes: line 2 column 3 (char 4)"
+    }
+  ],
+  "qualified": []
+}

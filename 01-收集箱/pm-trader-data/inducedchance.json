@@ -1,0 +1,12 @@
+{
+  "name": "inducedchance",
+  "address": "0xbcd6358b674834ec8101c238ec0d52540f0c0790",
+  "total_pnl": 376952,
+  "win_rate": 88.9,
+  "total_trades": 11,
+  "active_positions": 5,
+  "is_qualified": true,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T14:05:26.776822",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

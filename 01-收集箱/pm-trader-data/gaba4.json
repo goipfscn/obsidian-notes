@@ -1,0 +1,12 @@
+{
+  "name": "gaba4",
+  "address": "0x9ec7da81a2da3d47a47dd281b1ecf2cf2b3a35c0",
+  "total_pnl": 336631,
+  "win_rate": 100.0,
+  "total_trades": 17,
+  "active_positions": 7,
+  "is_qualified": false,
+  "is_bot": true,
+  "analyzed_at": "2026-03-03T14:05:26.777114",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

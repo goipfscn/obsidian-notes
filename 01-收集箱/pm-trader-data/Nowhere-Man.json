@@ -1,0 +1,12 @@
+{
+  "name": "Nowhere-Man",
+  "address": "0x45580feac3b916a88b7513929e26f86b3adea2b3",
+  "total_pnl": 307554,
+  "win_rate": 82.1,
+  "total_trades": 1034,
+  "active_positions": 15,
+  "is_qualified": false,
+  "is_bot": true,
+  "analyzed_at": "2026-03-03T14:05:26.777611",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

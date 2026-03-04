@@ -1,0 +1,12 @@
+{
+  "name": "fuego66",
+  "address": "0x09d3273fa76282ce09f4f35a87d6f087c05f4e84",
+  "total_pnl": 337979,
+  "win_rate": 71.4,
+  "total_trades": 11,
+  "active_positions": 7,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T13:04:09.855885",
+  "source": "polymarketanalytics.com (filtered)",
+  "is_qualified": true
+}

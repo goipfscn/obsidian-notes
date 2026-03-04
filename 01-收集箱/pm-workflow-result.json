@@ -1,0 +1,46 @@
+{
+  "workflow": "机器人猫工作流 - 交易员筛选",
+  "executed_at": "2026-03-03T18:07:49.225245",
+  "steps": {
+    "step1_cli": {
+      "description": "CLI筛选PnL $15K-$400K交易员",
+      "command": "polymarket data leaderboard --period all --order-by pnl --limit 20 --offset 600",
+      "result": "获取到20个候选交易员"
+    },
+    "step2_duola": {
+      "description": "duola同步+回测",
+      "traders_tested": [
+        "DumbMoney1",
+        "prematch",
+        "Gambler1968",
+        "ChinesePro",
+        "sherlockhomie"
+      ],
+      "issue": "大部分交易员数据太旧，30天窗口内无交易"
+    },
+    "step3_filter": {
+      "description": "1号博主标准筛选",
+      "criteria": {
+        "执行信号": "≥10",
+        "胜率": "≥70%",
+        "PnL": ">0"
+      }
+    }
+  },
+  "qualified_traders": [
+    {
+      "name": "Ronaldo2100",
+      "address": "0x71ca04d689bc38c5e4dcda8a4d743f279c5a3501",
+      "executed": 161,
+      "win_rate": 100,
+      "pnl_30d": 58.29,
+      "specialty": "央行利率 (Fed/BOE)",
+      "status": "✅ 符合1号博主标准"
+    }
+  ],
+  "notes": [
+    "新筛选的交易员数据太旧(2月)，30天窗口无交易",
+    "Ronaldo2100 是唯一符合标准的(已有数据)",
+    "建议用更短时间窗口(7d)或等待新数据"
+  ]
+}

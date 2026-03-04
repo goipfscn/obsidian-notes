@@ -1,0 +1,17 @@
+{
+  "tested": [
+    {
+      "name": "SwissMiss",
+      "error": "Expecting property name enclosed in double quotes: line 2 column 3 (char 4)"
+    },
+    {
+      "name": "NorthBalticMan9",
+      "error": "Expecting property name enclosed in double quotes: line 2 column 3 (char 4)"
+    },
+    {
+      "name": "ChinesePro",
+      "error": "Expecting property name enclosed in double quotes: line 2 column 3 (char 4)"
+    }
+  ],
+  "qualified": []
+}

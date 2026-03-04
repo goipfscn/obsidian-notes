@@ -1,0 +1,12 @@
+{
+  "name": "tourists",
+  "address": "0xc6dd722558dbfbd8fa780efcbe819ed8c6604b9f",
+  "total_pnl": 141424,
+  "win_rate": 74.6,
+  "total_trades": 559,
+  "active_positions": 20,
+  "is_qualified": true,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T14:05:26.780956",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

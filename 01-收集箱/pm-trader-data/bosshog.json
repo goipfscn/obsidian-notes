@@ -1,0 +1,12 @@
+{
+  "name": "bosshog",
+  "address": "0x47ab026767cc320ac6e62f6ec747d59cf4d795df",
+  "total_pnl": 172188,
+  "win_rate": 71.3,
+  "total_trades": 1373,
+  "active_positions": 79,
+  "is_qualified": false,
+  "is_bot": true,
+  "analyzed_at": "2026-03-03T14:05:26.779556",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

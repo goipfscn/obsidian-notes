@@ -1,0 +1,12 @@
+{
+  "name": "JAHODA",
+  "address": "0x0e5bd76779e74304d08e759072abf126d87da593",
+  "total_pnl": 146945,
+  "win_rate": 77.6,
+  "total_trades": 220,
+  "active_positions": 35,
+  "is_qualified": true,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T14:05:26.780615",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

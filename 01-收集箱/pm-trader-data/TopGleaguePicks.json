@@ -1,0 +1,12 @@
+{
+  "name": "TopGleaguePicks",
+  "address": "0x310f6937ed43dfb00722198ff787ca4a61fc4e42",
+  "total_pnl": 166482,
+  "win_rate": 84.0,
+  "total_trades": 70,
+  "active_positions": 7,
+  "is_qualified": true,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T14:05:26.780147",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "mep",
+  "address": "0x063bb5fcc55188f49704a5ffbefca037dc800711",
+  "total_pnl": 163082,
+  "win_rate": 73.8,
+  "total_trades": 143,
+  "active_positions": 2,
+  "is_qualified": true,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T14:05:26.780253",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

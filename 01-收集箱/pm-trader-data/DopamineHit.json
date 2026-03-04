@@ -1,0 +1,12 @@
+{
+  "name": "DopamineHit",
+  "address": "0xad89f899f1524533adfd1e6a07da692fcd92f6e1",
+  "total_pnl": 174682,
+  "win_rate": 79.5,
+  "total_trades": 2593,
+  "active_positions": 102,
+  "is_qualified": false,
+  "is_bot": true,
+  "analyzed_at": "2026-03-03T14:05:26.779408",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

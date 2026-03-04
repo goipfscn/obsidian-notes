@@ -1,0 +1,202 @@
+[
+  {
+    "name": "TheEtherist",
+    "address": "0xeB25989DAa631877D17D5555A3386e2cD73523e1",
+    "pnl": 237507.37,
+    "volume": 536836.74,
+    "total_trades": 45,
+    "closed_positions": 4,
+    "wins": 4,
+    "win_rate": 100.0
+  },
+  {
+    "name": "BigBlackGorilla",
+    "address": "0x97e12CC7391A50E49042b44a2d4a0CEf54c8017B",
+    "pnl": 237467.94,
+    "volume": 24648526.55,
+    "total_trades": 46,
+    "closed_positions": 4,
+    "wins": 4,
+    "win_rate": 100.0
+  },
+  {
+    "name": "J-E-R",
+    "address": "0x612f07E76abb9D4d1804264A088A37a666EcAa53",
+    "pnl": 236361.95,
+    "volume": 13650052.32,
+    "total_trades": 48,
+    "closed_positions": 0,
+    "wins": 0,
+    "win_rate": 0
+  },
+  {
+    "name": "Nuriols65Cuba",
+    "address": "0x14A1147aE7d206B835C1ee8F901E4e2EeC111149",
+    "pnl": 236123.22,
+    "volume": 6984006.83,
+    "total_trades": 48,
+    "closed_positions": 2,
+    "wins": 2,
+    "win_rate": 100.0
+  },
+  {
+    "name": "Nibiru2",
+    "address": "0x0F5801F1Fe7dbAdb5c1e92A310C9871447d90FF0",
+    "pnl": 235628.34,
+    "volume": 16220484.8,
+    "total_trades": 49,
+    "closed_positions": 1,
+    "wins": 0,
+    "win_rate": 0.0
+  },
+  {
+    "name": "risk-manager",
+    "address": "0xa61ef8773Ec2e821962306CA87d4b57e39ff0aBd",
+    "pnl": 235591.27,
+    "volume": 548694819.58,
+    "total_trades": 50,
+    "closed_positions": 0,
+    "wins": 0,
+    "win_rate": 0
+  },
+  {
+    "name": "tsybka",
+    "address": "0xd5Ccdf772F795547e299de57F47966E24De8DEa4",
+    "pnl": 235338.7,
+    "volume": 34187820.61,
+    "total_trades": 47,
+    "closed_positions": 2,
+    "wins": 1,
+    "win_rate": 50.0
+  },
+  {
+    "name": "Ronaldo2100",
+    "address": "0x71Ca04d689bc38c5E4dCDA8A4D743f279c5A3501",
+    "pnl": 235114.87,
+    "volume": 10988153.37,
+    "total_trades": 36,
+    "closed_positions": 6,
+    "wins": 5,
+    "win_rate": 83.3
+  },
+  {
+    "name": "0xAc0DB77fa0f064601f5bcAC",
+    "address": "0xAc0DB77fa0f064601f5bcAC4C0F1540481eFb006",
+    "pnl": 234615.24,
+    "volume": 2186413.89,
+    "total_trades": 47,
+    "closed_positions": 3,
+    "wins": 3,
+    "win_rate": 100.0
+  },
+  {
+    "name": "Signal47-Bets",
+    "address": "0xa83BE3F6a49604556F45089799f2B2096e71DeF4",
+    "pnl": 234540.11,
+    "volume": 135387.23,
+    "total_trades": 44,
+    "closed_positions": 3,
+    "wins": 1,
+    "win_rate": 33.3
+  },
+  {
+    "name": "SammySledge",
+    "address": "0xAfbAcAEEda63f31202759EFF7f8126E49ADfe61B",
+    "pnl": 234218.41,
+    "volume": 78604479.3,
+    "total_trades": 50,
+    "closed_positions": 0,
+    "wins": 0,
+    "win_rate": 0
+  },
+  {
+    "name": "0x732F1",
+    "address": "0x732F189193d7a8C8Bc8D8EB91F501A22736Af081",
+    "pnl": 234157.59,
+    "volume": 23534526.14,
+    "total_trades": 50,
+    "closed_positions": 0,
+    "wins": 0,
+    "win_rate": 0
+  },
+  {
+    "name": "lmeow11",
+    "address": "0x38507eb687f0a07e4d8A23a3C96a01916f0Fc4b4",
+    "pnl": 234054.62,
+    "volume": 5542243.29,
+    "total_trades": 32,
+    "closed_positions": 18,
+    "wins": 9,
+    "win_rate": 50.0
+  },
+  {
+    "name": "xxuoops",
+    "address": "0x60C58F40b05649F76b82B71B29200c20B9251C09",
+    "pnl": 233898.88,
+    "volume": 1258531.42,
+    "total_trades": 27,
+    "closed_positions": 8,
+    "wins": 8,
+    "win_rate": 100.0
+  },
+  {
+    "name": "Ringg",
+    "address": "0xeCC7c4d75bD75C9B9bEC87E5599681c58178FB2a",
+    "pnl": 233771.71,
+    "volume": 432910.58,
+    "total_trades": 4,
+    "closed_positions": 1,
+    "wins": 1,
+    "win_rate": 100.0
+  },
+  {
+    "name": "0x547889b207c980f660774D0",
+    "address": "0x5487559b207c980f660774D06CD5Ca144377A014",
+    "pnl": 233466.2,
+    "volume": 19941211.85,
+    "total_trades": 50,
+    "closed_positions": 0,
+    "wins": 0,
+    "win_rate": 0
+  },
+  {
+    "name": "0x4c9dF37296cbf4399CaD228",
+    "address": "0x4c9dF37296cbf4399CaD2283D3F3b8ef7E1668Dc",
+    "pnl": 232818.08,
+    "volume": 2066775.82,
+    "total_trades": 44,
+    "closed_positions": 6,
+    "wins": 0,
+    "win_rate": 0.0
+  },
+  {
+    "name": "flipfloppity",
+    "address": "0x858D551d073e9c647c17079ad9021de830201047",
+    "pnl": 232526.84,
+    "volume": 3822790.79,
+    "total_trades": 37,
+    "closed_positions": 13,
+    "wins": 2,
+    "win_rate": 15.4
+  },
+  {
+    "name": "upp",
+    "address": "0x2326812917A7BFeCB485Bb768007c910Ea31Ab0e",
+    "pnl": 231896.6,
+    "volume": 28646632.07,
+    "total_trades": 46,
+    "closed_positions": 1,
+    "wins": 1,
+    "win_rate": 100.0
+  },
+  {
+    "name": "Turnaround69",
+    "address": "0x5d89aD75F478BbCbC5cee98541288320d8EBA2Fe",
+    "pnl": 231658.08,
+    "volume": 1627402.74,
+    "total_trades": 47,
+    "closed_positions": 3,
+    "wins": 3,
+    "win_rate": 100.0
+  }
+]

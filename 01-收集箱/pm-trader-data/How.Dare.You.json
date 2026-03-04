@@ -1,0 +1,12 @@
+{
+  "name": "How.Dare.You",
+  "address": "0x4bbe10ba5b7f6df147c0dae17b46c44a6e562cf3",
+  "total_pnl": 345859,
+  "win_rate": 70.0,
+  "total_trades": 1204,
+  "active_positions": 55,
+  "is_qualified": false,
+  "is_bot": true,
+  "analyzed_at": "2026-03-03T13:05:51.449154",
+  "source": "1\u53f7\u535a\u4e3b\u7b5b\u9009\u5668"
+}

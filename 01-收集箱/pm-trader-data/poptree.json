@@ -1,0 +1,12 @@
+{
+  "name": "poptree",
+  "address": "0x57c5de7efafb020e589f80e0da6e16e9b5c907aa",
+  "total_pnl": 290269,
+  "win_rate": 73.0,
+  "total_trades": 693,
+  "active_positions": 27,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T13:04:09.855620",
+  "source": "polymarketanalytics.com (filtered)",
+  "is_qualified": true
+}

@@ -1,0 +1,12 @@
+{
+  "name": "foodenjoyer",
+  "address": "0x7b02b2bac2a30ed5e40b7094e734f4c3dc2a4991",
+  "total_pnl": 372998,
+  "win_rate": 70.0,
+  "total_trades": 55,
+  "active_positions": 9,
+  "is_bot": false,
+  "analyzed_at": "2026-03-03T13:04:09.855102",
+  "source": "polymarketanalytics.com (filtered)",
+  "is_qualified": true
+}
