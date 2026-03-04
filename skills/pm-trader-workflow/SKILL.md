@@ -9,7 +9,7 @@
 ```
 1. CLI筛选交易员 (PnL $15K-$400K)
        ↓
-2. duola同步 + 回测
+2. Scrapling + Cookie 获取详细数据
        ↓
 3. 1号博主标准筛选
        ↓
@@ -38,45 +38,14 @@ polymarket data activity 0x交易员地址 --limit 50
 
 ---
 
-## 步骤2: duola分析
-
-### 安装
-```bash
-npm install -g duola
-```
-
-### 添加交易员
-```bash
-duola leader add 0x交易员地址 --name 别名
-```
-
-### 同步数据
-```bash
-duola sync 别名 --limit 200
-```
-
-### 回测验证
-```bash
-duola backtest 别名 --lookback 30d --fixed-usd 10
-```
-
----
-
 ## 步骤3: 1号博主筛选标准
 
-### CLI筛选 (初级)
-| 指标 | 范围 |
-|------|------|
-| PnL | $15K - $400K |
-| 胜率 | 70% - 90% |
-| 交易次数 | 20 - 1000 |
-
-### duola验证 (二次)
+### Scrapling验证 (详细数据)
 | 指标 | 要求 |
 |------|------|
-| 执行信号 | ≥ 10 |
-| 胜率 | ≥ 70% (可放宽到90%) |
-| PnL | > 0 |
+| PnL | $15K - $400K |
+| 胜率 | 70% - 95% |
+| 交易次数 | 20 - 1000 |
 
 ### 排除Bot
 - ❌ 胜率 > 95% (确定是Bot)
@@ -85,7 +54,7 @@ duola backtest 别名 --lookback 30d --fixed-usd 10
 
 ---
 
-## 步骤4: Scrapling抓取详细数据
+## 步骤4: 图表分析
 
 ### 安装
 ```bash
