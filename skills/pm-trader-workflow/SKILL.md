@@ -11,9 +11,11 @@
        ↓
 2. Scrapling + Cookie 获取详细数据
        ↓
-3. 1号博主标准筛选
+3. 1号博主标准验证
        ↓
 4. 图表分析 + 记录
+
+(备用) duola回测验证
 ```
 
 ---
@@ -122,6 +124,32 @@ $0   ┼────────────────────────
 - 交易员数据: `obsidian/01-收集箱/pm-trader-data/`
 - 筛选结果: `obsidian/01-收集箱/pm-1haobo-qualified.json`
 - 分析报告: `obsidian/01-收集箱/`
+
+---
+
+## 备用: duola回测验证
+
+当Scrapling无法获取数据时使用：
+
+### 安装
+```bash
+npm install -g duola
+```
+
+### 添加交易员
+```bash
+duola leader add 0x交易员地址 --name 别名
+```
+
+### 同步数据
+```bash
+duola sync 别名 --limit 200
+```
+
+### 回测
+```bash
+duola backtest 别名 --lookback 30d --fixed-usd 10
+```
 
 ---
 
