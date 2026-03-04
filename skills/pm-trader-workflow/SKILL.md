@@ -56,7 +56,22 @@ polymarket data activity 0x交易员地址 --limit 50
 
 ---
 
-## 步骤4: 图表分析
+## 步骤4: 生成深度分析报告
+
+### 获取交易历史
+```bash
+polymarket data activity 0x交易员地址 --limit 30
+```
+
+### 分析内容
+- 核心数据 (PnL, Win Rate)
+- 专精领域分布
+- 最近30笔交易记录
+- 交易特点分析
+- 适合跟单评分
+
+### 输出格式
+保存到: `obsidian/01-收集箱/交易员名-深度分析.md`
 
 ### 安装
 ```bash
