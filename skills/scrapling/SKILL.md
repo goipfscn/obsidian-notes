@@ -39,7 +39,7 @@ scrapling extract fetch "https://example.com" -o output.html --wait 3000
 
 ### 绕过Cloudflare
 ```bash
-scrapling extract stealthy-fetch "https://polymarketanalytics.com/traders" -o output.html
+scrapling extract stealthy-fetch "https://hashdive.com/tradera" -o output.html
 ```
 
 ### 等待页面加载

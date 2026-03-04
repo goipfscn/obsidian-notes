@@ -80,7 +80,7 @@ pip install scrapling --break-system-packages
 
 ### 使用Cookie抓取
 ```bash
-scrapling extract fetch "https://polymarketanalytics.com/traders/0x交易员地址" /tmp/output.html --extra-headers "Cookie: auth_session=你的auth_session;pm_sticky=polygun" --wait 3000
+scrapling extract fetch "https://hashdive.com/tradera/0x交易员地址" /tmp/output.html --extra-headers "Cookie: auth_session=你的auth_session;pm_sticky=polygun" --wait 3000
 ```
 
 ### 获取Cookie
