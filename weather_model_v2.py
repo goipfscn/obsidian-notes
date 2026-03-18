@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
 """
-天气交易预测模型 - v2.0
-包含yuyu实战经验特征
+天气交易预测模型 - v2.1
+包含yuyu实战经验 + 逆温现象识别
 """
 
 import pandas as pd
 import numpy as np
-from sklearn.ensemble import GradientBoostingRegressor, GradientBoostingClassifier
-from sklearn.model_selection import cross_val_score
-import json
-import os
+from sklearn.ensemble import GradientBoostingRegressor
+import requests
 
 # 数据路径
 DATA_PATH = "/tmp/weather_history_1year.csv"
-OUTPUT_DIR = "/root/.openclaw/workspace"
+
+# 城市坐标
+CITY_COORDS = {
+    '上海': (31.23, 121.47),
+    '东京': (35.68, 139.76),
+    '新加坡': (1.35, 103.82),
+    '首尔': (37.57, 126.98),
+    '香港': (22.32, 114.17),
+    '巴黎': (48.85, 2.35),
+    '伦敦': (51.50, -0.12),
+    '纽约': (40.71, -74.00),
+}
 
 def load_data():
     """加载天气数据"""
@@ -21,213 +30,203 @@ def load_data():
     df['datetime'] = pd.to_datetime(df['datetime'])
     return df
 
-def extract_features(df, hour=13):
-    """
-    提取特征
-    
-    基础特征:
-    - temp: 气温
-    - humidity: 湿度
-    - wind_speed: 风速
-    - wind_dir: 风向
-    - cloud_cover: 云量
-    - pressure: 气压
-    - month: 月份
-    
-    yuyu特征:
-    - is_calm: 静风 (<3m/s)
-    - is_sunny: 晴天 (<20%云)
-    - is_warm_dir: 暖风 (135-225°)
-    - is_rain: 下雨 (有降水)
-    - is_sea_wind: 海风 (180-270°+高湿度)
-    - is_cloudy: 阴天 (>80%云)
-    - is_inversion: 逆温条件 (下雨+阴天+海风)
-    """
-    
-    # 筛选时间点
-    data = df[df['datetime'].dt.hour == hour].copy()
-    data['date'] = pd.to_datetime(data['datetime'].dt.date)
-    data['month'] = data['datetime'].dt.month
-    
-    # 获取当天最高温
-    daily_max = df.groupby([df['datetime'].dt.date, 'city'])['temp'].max().reset_index()
-    daily_max.columns = ['date', 'city', 'max_temp']
-    data['date'] = data['date'].dt.date
-    data = data.merge(daily_max, on=['date', 'city'], how='inner')
-    
-    # === 基础特征 ===
-    data['is_calm'] = (data['wind_speed'] < 3).astype(int)
-    data['is_sunny'] = (data['cloud_cover'] < 20).astype(int)
-    data['is_warm_dir'] = ((data['wind_dir'] >= 135) & (data['wind_dir'] <= 225)).astype(int)
-    
-    # === yuyu实战特征 ===
-    # 下雨
-    data['is_rain'] = (data['precipitation'] > 0).astype(int) if 'precipitation' in data.columns else 0
-    
-    # 海风 (东南风+高湿度)
-    data['is_sea_wind'] = ((data['wind_dir'] >= 180) & 
-                           (data['wind_dir'] <= 270) & 
-                           (data['humidity'] > 70)).astype(int)
-    
-    # 阴天
-    data['is_cloudy'] = (data['cloud_cover'] > 80).astype(int)
-    
-    # 逆温条件 (下雨+阴天+海风) - 晚间可能升温
-    data['is_inversion'] = (data['is_rain'] & data['is_cloudy'] & data['is_sea_wind']).astype(int)
-    
-    # 综合信号
-    data['hot_signal'] = data['is_sunny'] + data['is_calm'] + data['is_warm_dir']
-    data['inversion_signal'] = data['is_rain'] + data['is_cloudy'] + data['is_sea_wind']
-    
-    return data
-
-def train_regressor(data, features):
-    """训练预测最高温的回归模型"""
-    X = data[features]
-    y = data['max_temp']
-    
-    model = GradientBoostingRegressor(
-        n_estimators=200,
-        max_depth=6,
-        random_state=42
-    )
-    
-    # 交叉验证
-    scores = cross_val_score(model, X, y, cv=5, scoring='neg_mean_absolute_error')
-    print(f"交叉验证 MAE: {-scores.mean():.2f}°C (±{scores.std():.2f})")
-    
-    # 训练
-    model.fit(X, y)
-    
-    # 预测
-    data['pred_max'] = model.predict(X)
-    data['error'] = data['pred_max'] - data['max_temp']
-    
-    print(f"训练集 MAE: {abs(data['error']).mean():.2f}°C")
-    
-    return model, data
-
-def analyze_city(city, hour=13):
-    """分析单个城市"""
-    print(f"\n{'='*60}")
-    print(f"城市: {city}, 时间点: {hour}:00")
-    print("="*60)
-    
-    df = load_data()
-    city_data = df[df['city'] == city].copy()
-    
-    data = extract_features(city_data, hour)
-    
-    # 特征列表
-    features = [
-        'temp', 'humidity', 'wind_speed', 'wind_dir', 
-        'cloud_cover', 'pressure', 'month',
-        'is_calm', 'is_sunny', 'is_warm_dir',
-        'is_rain', 'is_sea_wind', 'is_cloudy', 'is_inversion'
-    ]
-    
-    # 训练模型
-    model, data = train_regressor(data, features)
-    
-    # 特征重要性
-    importance = pd.DataFrame({
-        'feature': features,
-        'importance': model.feature_importances_
-    }).sort_values('importance', ascending=False)
-    
-    print("\n特征重要性:")
-    for _, row in importance.head(10).iterrows():
-        print(f"  {row['feature']}: {row['importance']:.3f}")
-    
-    return model, data, importance
-
-def predict_today(city, hour=13):
-    """预测今天的温度"""
-    # 获取当前天气数据
-    city_coords = {
-        '上海': (31.23, 121.47),
-        '东京': (35.68, 139.76),
-        '新加坡': (1.35, 103.82),
-        '首尔': (37.57, 126.98),
-        '香港': (22.32, 114.17),
-        '巴黎': (48.85, 2.35),
-        '伦敦': (51.50, -0.12),
-        '纽约': (40.71, -74.00),
-    }
-    
-    if city not in city_coords:
+def get_realtime_weather(city):
+    """获取实时天气 + 历史同一天实际温度"""
+    if city not in CITY_COORDS:
         print(f"未知城市: {city}")
-        return
+        return None
     
-    lat, lon = city_coords[city]
+    lat, lon = CITY_COORDS[city]
     
-    # 调用Open-Meteo API
-    import requests
-    url = f"https://api.open-meteo.com/v1/forecast"
+    # 1. 当前实时数据 (Open-Meteo)
+    url = "https://api.open-meteo.com/v1/forecast"
     params = {
         'latitude': lat,
         'longitude': lon,
         'current': 'temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m,wind_direction_10m,cloud_cover,surface_pressure',
+        'hourly': 'temperature_2m',
         'timezone': 'Asia/Shanghai'
     }
     
-    resp = requests.get(url, params=params)
+    resp = requests.get(url, params=params, timeout=10)
     current = resp.json()['current']
+    hourly = resp.json()['hourly']
     
-    # 准备特征
-    now = pd.Timestamp.now()
-    features = {
-        'temp': current['temperature_2m'],
-        'humidity': current['relative_humidity_2m'],
-        'wind_speed': current['wind_speed_10m'] / 3.6,  # km/h -> m/s
-        'wind_dir': current['wind_direction_10m'],
-        'cloud_cover': current['cloud_cover'],
-        'pressure': current['surface_pressure'],
-        'month': now.month,
-        'is_calm': 1 if current['wind_speed_10m']/3.6 < 3 else 0,
-        'is_sunny': 1 if current['cloud_cover'] < 20 else 0,
-        'is_warm_dir': 1 if 135 <= current['wind_direction_10m'] <= 225 else 0,
-        'is_rain': 1 if current['precipitation'] > 0 else 0,
-        'is_sea_wind': 1 if (180 <= current['wind_direction_10m'] <= 270 and current['relative_humidity_2m'] > 70) else 0,
-        'is_cloudy': 1 if current['cloud_cover'] > 80 else 0,
-        'is_inversion': 0,  # 需要综合判断
+    # 2. 获取今天实际观测温度 (Archive API)
+    today = pd.Timestamp.now().strftime('%Y-%m-%d')
+    url2 = "https://archive-api.open-meteo.com/v1/archive"
+    params2 = {
+        'latitude': lat,
+        'longitude': lon,
+        'hourly': 'temperature_2m',
+        'start_date': today,
+        'end_date': today,
+        'timezone': 'Asia/Shanghai'
     }
     
-    # 判断逆温
-    features['is_inversion'] = int(features['is_rain'] and features['is_cloudy'] and features['is_sea_wind'])
+    try:
+        resp2 = requests.get(url2, params=params2, timeout=10)
+        actual_temps = resp2.json()['hourly']['temperature_2m']
+        actual_times = resp2.json()['hourly']['time']
+        
+        # 找到今天最高温度和出现时间
+        max_temp = max(actual_temps)
+        max_time = actual_times[actual_temps.index(max_temp)]
+        
+        # 找到今天最低温度
+        min_temp = min(actual_temps)
+        min_time = actual_times[actual_temps.index(min_temp)]
+        
+        has_inversion = max_time.startswith(today + 'T00') or max_time.startswith(today + 'T01') or max_time.startswith(today + 'T02') or max_time.startswith(today + 'T03') or max_time.startswith(today + 'T04') or max_time.startswith(today + 'T05')
+        
+    except:
+        max_temp = None
+        max_time = None
+        min_temp = None
+        min_time = None
+        has_inversion = False
     
-    print(f"\n当前天气 ({city}):")
-    print(f"  气温: {features['temp']}°C")
-    print(f"  云量: {features['cloud_cover']}%")
-    print(f"  风速: {features['wind_speed']:.1f} m/s")
-    print(f"  风向: {features['wind_dir']}°")
-    print(f"  湿度: {features['humidity']}%")
+    # 3. 获取机场METAR数据
+    metar = get_metar(city)
+    
+    return {
+        'current': current,
+        'today_max': max_temp,
+        'today_max_time': max_time,
+        'today_min': min_temp,
+        'today_min_time': min_time,
+        'has_inversion': has_inversion,
+        'metar': metar
+    }
+
+def get_metar(city):
+    """获取机场METAR数据"""
+    airports = {
+        '上海': ['ZSSS', 'ZSPD'],
+        '东京': ['RJTT', 'RJND'],
+        '新加坡': ['WSSS'],
+        '首尔': ['RKSI', 'RKJK'],
+        '香港': ['VHHH'],
+        '巴黎': ['LFPG', 'LFPB'],
+        '伦敦': ['EGLL', 'EGLC'],
+        '纽约': ['KJFK', 'KLAX'],
+    }
+    
+    if city not in airports:
+        return None
+    
+    ids = ','.join(airports[city])
+    url = f"https://aviationweather.gov/api/data/metar?ids={ids}&format=json"
+    
+    try:
+        resp = requests.get(url, timeout=5)
+        return resp.json()
+    except:
+        return None
+
+def analyze_city(city):
+    """分析城市天气"""
+    print(f"\n{'='*60}")
+    print(f"城市: {city}")
+    print("="*60)
+    
+    data = get_realtime_weather(city)
+    if not data:
+        return
+    
+    current = data['current']
+    
+    print(f"\n📡 当前天气 ({current['time']}):")
+    print(f"  气温: {current['temperature_2m']}°C")
+    print(f"  湿度: {current['relative_humidity_2m']}%")
+    print(f"  风速: {current['wind_speed_10m']} km/h")
+    print(f"  风向: {current['wind_direction_10m']}°")
+    print(f"  云量: {current['cloud_cover']}%")
+    print(f"  气压: {current['surface_pressure']} hPa")
     print(f"  降水: {current['precipitation']} mm")
-    print(f"\n信号:")
-    print(f"  高温信号: {features['is_sunny'] + features['is_calm'] + features['is_warm_dir']}/3")
-    print(f"  逆温信号: {features['is_inversion']}")
     
-    return features
+    # 解析天气
+    wind_speed_ms = current['wind_speed_10m'] / 3.6
+    wind_dir = current['wind_direction_10m']
+    
+    # 信号
+    is_calm = 1 if wind_speed_ms < 3 else 0
+    is_sunny = 1 if current['cloud_cover'] < 20 else 0
+    is_warm_dir = 1 if 135 <= wind_dir <= 225 else 0
+    is_rain = 1 if current['precipitation'] > 0 else 0
+    is_cloudy = 1 if current['cloud_cover'] > 80 else 0
+    is_sea_wind = 1 if (90 <= wind_dir <= 180 and current['relative_humidity_2m'] > 70) else 0
+    
+    hot_signal = is_sunny + is_calm + is_warm_dir
+    inversion_signal = is_rain + is_cloudy + is_sea_wind
+    
+    print(f"\n🌡️ 信号分析:")
+    print(f"  高温信号: {hot_signal}/3")
+    print(f"    - 静风: {'✓' if is_calm else '✗'}")
+    print(f"    - 晴天: {'✓' if is_sunny else '✗'}")
+    print(f"    - 暖风: {'✓' if is_warm_dir else '✗'}")
+    
+    print(f"\n🔄 逆温信号: {inversion_signal}/3")
+    print(f"    - 下雨: {'✓' if is_rain else '✗'}")
+    print(f"    - 阴天: {'✓' if is_cloudy else '✗'}")
+    print(f"    - 海风: {'✓' if is_sea_wind else '✗'}")
+    
+    if data['today_max']:
+        print(f"\n📊 今天实际温度:")
+        print(f"  最高: {data['today_max']}°C ({data['today_max_time']})")
+        print(f"  最低: {data['today_min']}°C ({data['today_min_time']})")
+        
+        if data['has_inversion']:
+            print(f"\n⚠️  逆温现象！最高温出现在凌晨/早上！")
+    
+    # 机场数据
+    if data['metar']:
+        print(f"\n🛫 机场METAR:")
+        for m in data['metar'][:2]:
+            print(f"  {m.get('icaoId', 'N/A')}: {m.get('temp', 'N/A')}°C, {m.get('wdir', 'N/A')}°/{m.get('wspd', 'N/A')}m/s, {m.get('wxString', 'N/A')}")
+
+def predict_pm(city):
+    """预测Polymarket结果"""
+    print(f"\n{'='*60}")
+    print(f"Polymarket 预测")
+    print("="*60)
+    
+    # 获取PM市场
+    import subprocess
+    result = subprocess.run(
+        ['polymarket', 'markets', 'search', f'{city} March {pd.Timestamp.now().day} temperature', '--limit', '15'],
+        capture_output=True, text=True
+    )
+    
+    if result.returncode == 0:
+        print(result.stdout)
+    
+    # 简单预测
+    data = get_realtime_weather(city)
+    if data and data['today_max']:
+        print(f"\n🎯 实际预测:")
+        print(f"  今天最高: {data['today_max']}°C")
+        print(f"  建议关注: {data['today_max']}°C 对应的市场")
 
 def main():
     """主函数"""
-    print("天气交易预测模型 v2.0")
+    print("天气交易预测模型 v2.1")
     print("="*60)
+    print("包含: 逆温现象识别 + yuyu实战经验")
     
-    # 分析主要城市
     cities = ['上海', '东京', '新加坡', '首尔', '香港', '巴黎', '伦敦', '纽约']
     
     for city in cities:
         try:
-            analyze_city(city, hour=13)
+            analyze_city(city)
         except Exception as e:
             print(f"{city}: 错误 - {e}")
     
-    # 预测今天
+    # 详细分析上海
     print("\n" + "="*60)
-    print("今日预测")
+    print("上海 Polymarket 市场分析")
     print("="*60)
-    predict_today('上海')
+    predict_pm('上海')
 
 if __name__ == "__main__":
     main()
